@@ -163,11 +163,27 @@ export default {
   display: inline-block;
   width: 100%;
   min-width: 100px;
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(0, 0, 0, 0.88);
   font-size: 14px;
   cursor: pointer;
-  background-color: #fff;
-  transition: all 0.3s;
+  background-color: #ffffff;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.a-select-bordered .a-select-selector {
+  border: 1px solid #d9d9d9;
+}
+
+.a-select-bordered:hover .a-select-selector {
+  border-color: #4096ff;
+}
+
+.a-select-focused .a-select-selector,
+.a-select-open .a-select-selector {
+  border-color: #4096ff;
+  box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1);
+  outline: 0;
 }
 
 .a-select-open .a-select-arrow-icon {
@@ -191,25 +207,26 @@ export default {
   align-items: center;
   height: 32px;
   padding: 0 25px 0 11px;
-  overflow: hidden;
   background-color: inherit;
-  transition: all 0.3s;
-  border-radius: 2px;
+  border-radius: 6px;
+  transition: all 0.2s;
 }
 
 .a-select-selection-item {
   flex: 1;
+  text-align: left;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
 .a-select-selection-placeholder {
-  color: #bfbfbf;
+  color: rgba(0, 0, 0, 0.25);
   flex: 1;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  text-align: left;
 }
 
 .a-select-arrow {
@@ -217,7 +234,7 @@ export default {
   align-items: center;
   position: absolute;
   top: 50%;
-  right: 10px;
+  right: 11px;
   height: 12px;
   margin-top: -6px;
   color: rgba(0, 0, 0, 0.25);
@@ -239,19 +256,22 @@ export default {
   position: fixed;
   margin-top: 4px;
   padding: 4px 0;
-  overflow: visible !important;
-  background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08),
+    0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
   z-index: 1050;
   max-height: 256px;
   min-width: 200px;
+  overflow: hidden;
 }
 
 .a-select-dropdown-menu {
   margin: 0;
   padding: 0;
   list-style: none;
+  max-height: 248px; /* 256 - 4*2 */
+  overflow-y: auto;
 }
 
 .a-select-dropdown-menu-item {
@@ -259,20 +279,21 @@ export default {
   display: block;
   min-height: 32px;
   padding: 5px 12px;
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(0, 0, 0, 0.88);
   font-weight: normal;
   line-height: 22px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.2s ease;
+  border-radius: 4px;
+  margin: 0 4px;
 }
 
 .a-select-dropdown-menu-item:hover {
-  background-color: #f5f5f5;
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 .a-select-dropdown-menu-item-selected {
-  color: #1890ff;
   font-weight: 600;
-  background-color: #e6f7ff;
+  background-color: rgba(5, 145, 255, 0.1);
 }
 </style>

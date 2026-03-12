@@ -180,7 +180,7 @@ export default {
   padding: 4px 15px;
   font-size: 14px;
   height: 32px;
-  width:32px;
+  min-width:32px;
   display: flex;
   align-items: center;
   justify-content: center;
