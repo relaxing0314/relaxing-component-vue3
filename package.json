@@ -1,0 +1,35 @@
+{
+  "name": "relaxing-component-vue3",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/relaxing-component-vue3.umd.js",
+  "module": "./dist/relaxing-component-vue3.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/relaxing-component-vue3.es.js",
+      "require": "./dist/relaxing-component-vue3.umd.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/relaxing0314/relaxing-component-vue3"
+  },
+  "dependencies": {
+    "vue": "^3.5.25",
+    "axios": "^1.6.2",
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.2",
+    "vite": "^7.3.1"
+  }
+}
