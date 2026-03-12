@@ -17,6 +17,8 @@ export default defineConfig(({ command, mode }) => {
     return {
       ...common,
       build: {
+        outDir: "dist", // 明确指定库的输出目录
+        emptyOutDir: false, // 构建时不清空 dist 目录
         lib: {
           entry: path.resolve(__dirname, "src/main.js"),
           name: "relaxing-component-vue3",
@@ -34,7 +36,11 @@ export default defineConfig(({ command, mode }) => {
     };
   }
 
+  // 非 lib 模式下走正常 SPA 构建，用于示例页面
   return {
     ...common,
+    build: {
+      outDir: "dist_demo", // 示例站点的输出目录
+    },
   };
 });
