@@ -26,7 +26,12 @@
 
     <section class="demo-section">
       <h2>ATextarea 文本域</h2>
-      <ATextarea v-model="text" placeholder="请输入一些内容" />
+      <ATextarea
+        v-model="text"
+        placeholder="请输入一些内容"
+        :showCount="true"
+        :maxlength="100"
+      />
       <p class="demo-result">当前内容：{{ text || "暂无" }}</p>
     </section>
 
@@ -41,6 +46,11 @@
         </ACollapse.Panel>
       </ACollapse>
     </section>
+
+    <section class="demo-section">
+      <h2>MarkdownView Markdown 渲染器</h2>
+      <MarkdownView :content="markdownStr" />
+    </section>
   </div>
 </template>
 
@@ -51,10 +61,12 @@ import {
   ASelect,
   ATextarea,
   ACollapse,
+  MarkdownView,
 } from "relaxing-component-vue3";
 
 const selected = ref("");
 const text = ref("");
+const markdownStr = ref(`以下是一道经典的鱼香肉丝的做法和图片\n\n### 鱼香肉丝的做法\n**食材：**\n- 瘦肉（猪里脊）200克\n- 胡萝卜1根\n- 青椒1个\n- 黑木耳适量\n- 郫县豆瓣酱1汤匙\n- 蒜末、姜末适量\n\n### 菜品图片\n![鱼香肉丝图片](https://file-res.mxnzp.com/cookbook_file/6/e/b/d/3/a/7/d/f34de1ea7f114097b114ae1c1f6567ba.jpg)\n\n这道菜酸甜微辣，非常下饭，希望您喜欢！`)
 
 const handleClick = () => {
   // 这里可以结合 Message 组件进行消息提示

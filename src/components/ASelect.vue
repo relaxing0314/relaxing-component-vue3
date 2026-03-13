@@ -205,7 +205,7 @@ export default {
   position: relative;
   display: flex;
   align-items: center;
-  height: 32px;
+  height: 30px;
   padding: 0 25px 0 11px;
   background-color: inherit;
   border-radius: 6px;
@@ -214,7 +214,6 @@ export default {
 
 .a-select-selection-item {
   flex: 1;
-  text-align: left;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -226,7 +225,6 @@ export default {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  text-align: left;
 }
 
 .a-select-arrow {
@@ -258,6 +256,7 @@ export default {
   padding: 4px 0;
   background-color: #ffffff;
   border-radius: 8px;
+  outline: none;
   box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08),
     0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
   z-index: 1050;
@@ -276,7 +275,8 @@ export default {
 
 .a-select-dropdown-menu-item {
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
   min-height: 32px;
   padding: 5px 12px;
   color: rgba(0, 0, 0, 0.88);

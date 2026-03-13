@@ -135,19 +135,21 @@ export default {
 .collapse-panel-header {
   position: relative;
   padding: 12px 16px;
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(0, 0, 0, 0.88);
   cursor: pointer;
   display: flex;
   align-items: center;
+  transition: all 0.2s;
 }
 
 .collapse-panel-header:hover {
-  background-color: #f5f5f5;
+  background-color: rgba(0, 0, 0, 0.02);
 }
 
 .collapse-panel-arrow {
   margin-right: 12px;
   font-size: 12px;
+  transition: transform 0.2s;
 }
 
 .collapse-panel-arrow-left {
@@ -157,7 +159,8 @@ export default {
 .collapse-panel-arrow .icon {
   width: 12px;
   height: 12px;
-  transition: transform 0.3s;
+  fill: currentColor;
+  transition: transform 0.2s;
 }
 
 .collapse-panel-header-text {
@@ -169,21 +172,23 @@ export default {
 
 .collapse-panel-extra {
   margin-left: auto;
+  padding-left: 16px;
 }
 
 .collapse-panel-content {
   overflow: hidden;
-  color: rgba(0, 0, 0, 0.65);
-  background-color: #fff;
-  transition: height 0.3s ease-in-out;
+  color: rgba(0, 0, 0, 0.88);
+  background-color: #ffffff;
+  transition: height 0.2s ease-in-out;
 }
 
 .collapse-panel-content-box {
   padding: 16px;
+  border-top: 1px solid #f0f0f0;
 }
 
 .collapse-panel-active .collapse-panel-header {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .collapse-panel-disabled .collapse-panel-header {

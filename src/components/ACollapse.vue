@@ -122,10 +122,13 @@ export default {
 
 <style scoped>
 .collapse {
-  background-color: #fff;
-  border-radius: 2px;
+  background-color: #ffffff;
+  border-radius: 8px;
   border: 1px solid #d9d9d9;
   font-size: 14px;
+  line-height: 1.5715;
+  color: rgba(0, 0, 0, 0.88);
+  overflow: hidden; /* 确保子面板的圆角生效 */
 }
 .collapse.collapse-borderless {
   border: 0;

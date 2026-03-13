@@ -110,7 +110,10 @@ export default {
       @blur="handleBlur"
       @keydown="handleKeydown"
     ></textarea>
-    <span v-if="showCount && maxlength" class="a-textarea-count">
+    <span
+      v-if="showCount && maxlength"
+      class="a-textarea-count"
+    >
       {{ modelValue.length }}/{{ maxlength }}
     </span>
   </div>
@@ -121,66 +124,58 @@ export default {
   position: relative;
   display: inline-block;
   width: 100%;
-  min-width: 0;
-  padding: 0;
-  color: rgba(0, 0, 0, 0.85);
-  font-size: 14px;
-  background-image: none;
-  border-radius: 2px;
-  transition: all 0.3s;
 }
 
 .a-textarea {
   box-sizing: border-box;
-  margin: 0;
-  color: rgba(0, 0, 0, 0.85);
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 32px;
+  padding: 4px 11px;
+  color: rgba(0, 0, 0, 0.88);
   font-size: 14px;
   line-height: 1.5715;
-  list-style: none;
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  min-width: 0;
+  background-color: #ffffff;
   background-image: none;
-  border-radius: 2px;
-  transition: all 0.3s;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  transition: all 0.2s;
   resize: vertical;
   outline: none;
-  height: 100%;
-  border: none;
-  padding: 14px 16px;
-  line-height: 1.6;
-  color: #2d3748;
-  background: #fafafa;
-  resize: none;
-  max-height: 150px;
 }
 
 .a-textarea:hover {
-  border-color: #40a9ff;
-  border-right-width: 1px;
+  border-color: #4096ff;
+}
+
+.a-textarea-wrapper.a-textarea-focused .a-textarea {
+  border-color: #4096ff;
+  box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1);
+  outline: 0;
 }
 
 .a-textarea::placeholder {
-  color: #bfbfbf;
+  color: rgba(0, 0, 0, 0.25);
 }
 
-.a-textarea-disabled .a-textarea {
+.a-textarea-wrapper.a-textarea-disabled .a-textarea {
   color: rgba(0, 0, 0, 0.25);
   background-color: #f5f5f5;
+  border-color: #d9d9d9;
   cursor: not-allowed;
-  opacity: 1;
 }
 
-.a-textarea-disabled .a-textarea:hover {
+.a-textarea-wrapper.a-textarea-disabled .a-textarea:hover {
   border-color: #d9d9d9;
 }
 
 .a-textarea-count {
   position: absolute;
   right: 11px;
-  bottom: 8px;
+  bottom: 5px;
   color: rgba(0, 0, 0, 0.45);
+  font-size: 12px;
   white-space: nowrap;
   pointer-events: none;
 }
